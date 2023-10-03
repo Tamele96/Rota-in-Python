@@ -1,15 +1,13 @@
-import functions as f
+import GameBoard
 
-f.start_game()
+game = GameBoard()
+player = 1
 
-while f.game:
-
-    if f.iturn:
-        f.player_i()
-        f.win_check()
-
+while game.activeGame:
+    game.playerTurn(player)
+    if (player == 1):
+        player = 2
     else:
-        f.player_u()
-        f.win_check()
+        player = 1
 
-f.print_winner()
+print(f"Player {game.board[8]} won!")
